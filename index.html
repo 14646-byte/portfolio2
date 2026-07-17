@@ -7,7 +7,13 @@
 
 <title>Portfolio | สุธิดา เกตุแก้ว</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
 
@@ -21,11 +27,7 @@ scroll-behavior:smooth;
 
 body{
 
-background:linear-gradient(-45deg,#ffd6e8,#ffe4ef,#fff5f8,#ffc2d1);
-
-background-size:400% 400%;
-
-animation:bg 15s infinite ease;
+background:linear-gradient(135deg,#ffe4ef,#ffd6e8,#fff5fa);
 
 overflow-x:hidden;
 
@@ -33,17 +35,7 @@ color:#444;
 
 }
 
-@keyframes bg{
-
-0%{background-position:0% 50%;}
-
-50%{background-position:100% 50%;}
-
-100%{background-position:0% 50%;}
-
-}
-
-/* Glow */
+/* Background */
 
 body::before{
 
@@ -55,37 +47,49 @@ width:700px;
 
 height:700px;
 
-background:rgba(255,182,193,.25);
+background:#ffb6d5;
 
-filter:blur(140px);
+border-radius:50%;
 
-top:-250px;
+filter:blur(180px);
 
-left:-200px;
+left:-220px;
 
-z-index:-1;
+top:-220px;
 
-animation:glow 8s infinite alternate;
+opacity:.45;
 
-}
-
-@keyframes glow{
-
-from{
-
-transform:translate(0,0);
+z-index:-2;
 
 }
 
-to{
+body::after{
 
-transform:translate(200px,120px);
+content:"";
+
+position:fixed;
+
+width:650px;
+
+height:650px;
+
+background:#ffc9df;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+right:-220px;
+
+bottom:-220px;
+
+opacity:.45;
+
+z-index:-2;
 
 }
 
-}
-
-/* Header */
+/* Navbar */
 
 header{
 
@@ -97,7 +101,7 @@ left:0;
 
 width:100%;
 
-padding:18px 8%;
+padding:20px 8%;
 
 display:flex;
 
@@ -105,11 +109,11 @@ justify-content:space-between;
 
 align-items:center;
 
-background:rgba(255,255,255,.35);
+background:rgba(255,255,255,.45);
 
 backdrop-filter:blur(18px);
 
-box-shadow:0 8px 20px rgba(0,0,0,.08);
+box-shadow:0 5px 20px rgba(0,0,0,.05);
 
 z-index:999;
 
@@ -117,7 +121,7 @@ z-index:999;
 
 .logo{
 
-font-size:30px;
+font-size:34px;
 
 font-weight:700;
 
@@ -129,27 +133,27 @@ nav ul{
 
 display:flex;
 
-gap:35px;
-
 list-style:none;
+
+gap:35px;
 
 }
 
-nav a{
+nav ul li a{
 
 text-decoration:none;
-
-color:#555;
 
 font-size:17px;
 
 font-weight:500;
 
+color:#555;
+
 transition:.3s;
 
 }
 
-nav a:hover{
+nav ul li a:hover{
 
 color:#ff4f87;
 
@@ -163,47 +167,55 @@ min-height:100vh;
 
 display:flex;
 
-align-items:center;
-
 justify-content:space-between;
 
-padding:120px 8%;
+align-items:center;
+
+padding:120px 8% 60px;
 
 gap:60px;
 
 }
 
-.left{
+.content{
 
 flex:1;
 
-animation:fade 1s;
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(18px);
+
+padding:60px;
+
+border-radius:35px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+animation:fadeUp 1s;
 
 }
 
-.left h3{
+.content span{
 
-font-size:28px;
+font-size:24px;
 
-color:#ff6b9e;
-
-margin-bottom:10px;
+color:#ff6fa5;
 
 }
 
-.left h1{
+.content h1{
 
-font-size:70px;
+font-size:72px;
 
 color:#ff4f87;
 
-margin-bottom:15px;
+margin:15px 0;
 
 }
 
-.left h2{
+.content h2{
 
-font-size:30px;
+font-size:28px;
 
 font-weight:400;
 
@@ -211,7 +223,7 @@ margin-bottom:25px;
 
 }
 
-.left p{
+.content p{
 
 font-size:18px;
 
@@ -219,69 +231,76 @@ line-height:1.9;
 
 margin-bottom:35px;
 
-max-width:600px;
+color:#666;
 
 }
+/* ปุ่ม */
 
-.button{
+.buttons{
 
 display:flex;
 
 gap:20px;
 
+margin-top:20px;
+
 }
 
 .btn{
 
-padding:14px 35px;
+display:inline-block;
 
-border-radius:40px;
+padding:14px 32px;
+
+border-radius:50px;
 
 text-decoration:none;
 
 font-size:17px;
 
-font-weight:500;
+font-weight:600;
 
 transition:.35s;
 
 }
 
-.btn1{
+.btn-primary{
 
-background:#ff6fa5;
+background:#ff5c99;
 
 color:white;
 
+box-shadow:0 10px 25px rgba(255,92,153,.35);
+
 }
 
-.btn1:hover{
+.btn-primary:hover{
 
 transform:translateY(-5px);
 
-box-shadow:0 10px 25px rgba(255,111,165,.4);
+background:#ff3f84;
 
 }
 
-.btn2{
+.btn-outline{
 
-border:2px solid #ff6fa5;
+border:2px solid #ff5c99;
 
-color:#ff6fa5;
+color:#ff5c99;
 
 }
 
-.btn2:hover{
+.btn-outline:hover{
 
-background:#ff6fa5;
+background:#ff5c99;
 
 color:white;
 
 }
 
-/* รูป */
+/* รูปโปรไฟล์ */
 
-.right{
+.profile{
 
 flex:1;
 
@@ -289,49 +308,111 @@ display:flex;
 
 justify-content:center;
 
+align-items:center;
+
+position:relative;
+
 }
 
-.right img{
+.circle{
 
-width:380px;
+width:420px;
 
-height:380px;
+height:420px;
 
 border-radius:50%;
 
-object-fit:cover;
+background:rgba(255,255,255,.35);
 
-border:10px solid white;
+backdrop-filter:blur(20px);
 
-box-shadow:0 20px 40px rgba(0,0,0,.12);
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 20px 50px rgba(255,105,180,.18);
 
 animation:float 4s ease-in-out infinite;
 
 }
 
+.circle::before{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+border:3px solid rgba(255,255,255,.8);
+
+border-radius:50%;
+
+animation:pulse 3s infinite;
+
+}
+
+.circle img{
+
+width:360px;
+
+height:360px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:8px solid white;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+/* Animation */
+
 @keyframes float{
+
+0%{transform:translateY(0);}
+
+50%{transform:translateY(-18px);}
+
+100%{transform:translateY(0);}
+
+}
+
+@keyframes pulse{
 
 0%{
 
-transform:translateY(0);
+transform:scale(1);
+
+opacity:.8;
 
 }
 
 50%{
 
-transform:translateY(-18px);
+transform:scale(1.05);
+
+opacity:.4;
 
 }
 
 100%{
 
-transform:translateY(0);
+transform:scale(1);
+
+opacity:.8;
 
 }
 
 }
 
-@keyframes fade{
+@keyframes fadeUp{
 
 from{
 
@@ -351,8 +432,63 @@ transform:translateY(0);
 
 }
 
-</style>
+/* Responsive */
 
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+padding-top:150px;
+
+}
+
+.content{
+
+padding:40px;
+
+}
+
+.content h1{
+
+font-size:52px;
+
+}
+
+.circle{
+
+width:300px;
+
+height:300px;
+
+}
+
+.circle::before{
+
+width:330px;
+
+height:330px;
+
+}
+
+.circle img{
+
+width:250px;
+
+height:250px;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+}
 </head>
 
 <body>
@@ -383,9 +519,9 @@ transform:translateY(0);
 
 <section class="hero">
 
-<div class="left">
+<div class="content">
 
-<h3>👋 Hello, I'm</h3>
+<span>👋 Hello, I'm</span>
 
 <h1>สุธิดา เกตุแก้ว</h1>
 
@@ -394,614 +530,33 @@ transform:translateY(0);
 <p>
 
 ยินดีต้อนรับสู่เว็บไซต์ Portfolio ของฉัน
-
-เว็บไซต์นี้รวบรวมประวัติส่วนตัว ประวัติการศึกษา ผลงาน และช่องทางการติดต่อ
-เพื่อใช้ประกอบการศึกษาต่อและแสดงผลงานของฉัน
+รวบรวมประวัติส่วนตัว ประวัติการศึกษา ผลงาน
+และช่องทางการติดต่อ เพื่อใช้ประกอบการศึกษาต่อ
 
 </p>
 
-<div class="button">
+<div class="buttons">
 
-<a href="about.html" class="btn btn1">
-
+<a href="about.html" class="btn btn-primary">
 About Me
-
 </a>
 
-<a href="projects.html" class="btn btn2">
-
+<a href="projects.html" class="btn btn-outline">
 My Projects
-
 </a>
 
 </div>
 
 </div>
 
-<div class="right">
+<div class="profile">
+
+<div class="circle">
 
 <img src="images/profile.jpg" alt="Profile">
 
 </div>
 
-</section>
-<!-- ================= My Skills ================= -->
-
-<section class="skills">
-
-<h2>My Skills</h2>
-
-<div class="skill-container">
-
-<div class="card">
-
-<div class="icon">💻</div>
-
-<h3>Web Development</h3>
-
-<p>
-
-สามารถพัฒนาเว็บไซต์ด้วย
-
-HTML CSS JavaScript
-
-</p>
-
 </div>
 
-<div class="card">
-
-<div class="icon">🎨</div>
-
-<h3>Graphic Design</h3>
-
-<p>
-
-ออกแบบโปสเตอร์
-
-Canva Photoshop
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">🤝</div>
-
-<h3>Teamwork</h3>
-
-<p>
-
-สามารถทำงานร่วมกับผู้อื่น
-
-มีความรับผิดชอบ
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= Statistics ================= -->
-
-<section class="stats">
-
-<div class="stat">
-
-<h1>4+</h1>
-
-<p>Years Learning</p>
-
-</div>
-
-<div class="stat">
-
-<h1>10+</h1>
-
-<p>Certificates</p>
-
-</div>
-
-<div class="stat">
-
-<h1>20+</h1>
-
-<p>Activities</p>
-
-</div>
-
-<div class="stat">
-
-<h1>100%</h1>
-
-<p>Determination</p>
-
-</div>
-
-</section>
-
-<style>
-
-.skills{
-
-padding:90px 8%;
-
-text-align:center;
-
-}
-
-.skills h2{
-
-font-size:42px;
-
-color:#ff4f87;
-
-margin-bottom:50px;
-
-}
-
-.skill-container{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:30px;
-
-}
-
-.card{
-
-background:rgba(255,255,255,.4);
-
-backdrop-filter:blur(15px);
-
-padding:35px;
-
-border-radius:25px;
-
-transition:.4s;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-}
-
-.card:hover{
-
-transform:translateY(-15px);
-
-box-shadow:0 20px 40px rgba(255,105,180,.25);
-
-}
-
-.icon{
-
-font-size:55px;
-
-margin-bottom:20px;
-
-}
-
-.card h3{
-
-color:#ff4f87;
-
-margin-bottom:15px;
-
-}
-
-.card p{
-
-line-height:1.8;
-
-}
-
-/* Statistics */
-
-.stats{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-
-gap:25px;
-
-padding:60px 8%;
-
-}
-
-.stat{
-
-background:white;
-
-padding:30px;
-
-border-radius:25px;
-
-text-align:center;
-
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-transition:.4s;
-
-}
-
-.stat:hover{
-
-transform:scale(1.05);
-
-}
-
-.stat h1{
-
-font-size:50px;
-
-color:#ff4f87;
-
-margin-bottom:10px;
-
-}
-
-.stat p{
-
-font-size:18px;
-
-color:#666;
-
-}
-
-/* ซากุระ */
-
-.sakura{
-
-position:fixed;
-
-top:-20px;
-
-font-size:24px;
-
-pointer-events:none;
-
-animation:fall linear forwards;
-
-z-index:0;
-
-}
-
-@keyframes fall{
-
-0%{
-
-transform:translateY(-10vh) rotate(0deg);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateY(110vh) rotate(720deg);
-
-opacity:0;
-
-}
-
-}
-
-</style>
-
-<script>
-
-/* ดอกซากุระ */
-
-setInterval(()=>{
-
-const flower=document.createElement("div");
-
-flower.className="sakura";
-
-flower.innerHTML="🌸";
-
-flower.style.left=Math.random()*100+"vw";
-
-flower.style.animationDuration=(Math.random()*4+5)+"s";
-
-flower.style.fontSize=(Math.random()*20+18)+"px";
-
-document.body.appendChild(flower);
-
-setTimeout(()=>{
-
-flower.remove();
-
-},9000);
-
-},500);
-
-</script>
-<!-- ================= Featured Projects ================= -->
-
-<section class="projects">
-
-<h2>Featured Projects</h2>
-
-<div class="project-container">
-
-<div class="project-card">
-
-<img src="images/work1.jpg" alt="Project">
-
-<h3>Portfolio Website</h3>
-
-<p>
-เว็บไซต์ Portfolio ที่พัฒนาด้วย HTML, CSS และ JavaScript
-</p>
-
-<a href="projects.html">ดูเพิ่มเติม →</a>
-
-</div>
-
-<div class="project-card">
-
-<img src="images/work2.jpg" alt="Project">
-
-<h3>Certificate</h3>
-
-<p>
-รวบรวมเกียรติบัตรและผลงานที่ภาคภูมิใจ
-</p>
-
-<a href="projects.html">ดูเพิ่มเติม →</a>
-
-</div>
-
-<div class="project-card">
-
-<img src="images/work3.jpg" alt="Project">
-
-<h3>School Activities</h3>
-
-<p>
-กิจกรรมที่เข้าร่วมทั้งภายในและภายนอกโรงเรียน
-</p>
-
-<a href="projects.html">ดูเพิ่มเติม →</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= Footer ================= -->
-
-<footer>
-
-<h2>Thank you for visiting 💖</h2>
-
-<p>
-
-Portfolio by <strong>สุธิดา เกตุแก้ว</strong>
-
-</p>
-
-<p>
-
-© 2026 All Rights Reserved
-
-</p>
-
-</footer>
-
-<button id="topBtn">⬆</button>
-
-<style>
-
-/* ===== Projects ===== */
-
-.projects{
-
-padding:100px 8%;
-
-text-align:center;
-
-}
-
-.projects h2{
-
-font-size:42px;
-
-color:#ff4f87;
-
-margin-bottom:50px;
-
-}
-
-.project-container{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-gap:30px;
-
-}
-
-.project-card{
-
-background:rgba(255,255,255,.45);
-
-backdrop-filter:blur(18px);
-
-border-radius:25px;
-
-overflow:hidden;
-
-transition:.4s;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-}
-
-.project-card:hover{
-
-transform:translateY(-15px);
-
-box-shadow:0 25px 45px rgba(255,105,180,.25);
-
-}
-
-.project-card img{
-
-width:100%;
-
-height:220px;
-
-object-fit:cover;
-
-transition:.4s;
-
-}
-
-.project-card:hover img{
-
-transform:scale(1.08);
-
-}
-
-.project-card h3{
-
-margin:20px 0 10px;
-
-color:#ff4f87;
-
-}
-
-.project-card p{
-
-padding:0 20px;
-
-line-height:1.8;
-
-margin-bottom:20px;
-
-}
-
-.project-card a{
-
-display:inline-block;
-
-margin-bottom:25px;
-
-padding:10px 24px;
-
-background:#ff6fa5;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:30px;
-
-transition:.3s;
-
-}
-
-.project-card a:hover{
-
-background:#ff4f87;
-
-}
-
-/* ===== Footer ===== */
-
-footer{
-
-margin-top:80px;
-
-padding:50px;
-
-text-align:center;
-
-background:#ff9fc3;
-
-color:white;
-
-}
-
-footer h2{
-
-margin-bottom:15px;
-
-}
-
-/* ===== Back To Top ===== */
-
-#topBtn{
-
-position:fixed;
-
-right:30px;
-
-bottom:30px;
-
-width:55px;
-
-height:55px;
-
-border:none;
-
-border-radius:50%;
-
-background:#ff4f87;
-
-color:white;
-
-font-size:22px;
-
-cursor:pointer;
-
-display:none;
-
-transition:.3s;
-
-box-shadow:0 10px 25px rgba(0,0,0,.2);
-
-}
-
-#topBtn:hover{
-
-transform:scale(1.1);
-
-}
-
-</style>
-
-<script>
-
-/* Back To Top */
-
-const topBtn=document.getElementById("topBtn");
-
-window.addEventListener("scroll",()=>{
-
-topBtn.style.display=window.scrollY>300?"block":"none";
-
-});
-
-topBtn.onclick=()=>{
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-};
-
-</script>
+</section>  
