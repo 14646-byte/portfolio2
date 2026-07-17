@@ -1,64 +1,1162 @@
+```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio | หน้าหลัก</title>
+<title>Portfolio | สุธิดา เกตุแก้ว</title>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(-45deg,#FFE4EC,#FFD6E8,#FFF0F5,#FFD1DC);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    color:#555;
+    overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(15px);
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+z-index:999;
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+color:#ff4f87;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:35px;
+}
+
+nav a{
+text-decoration:none;
+font-size:18px;
+color:#555;
+transition:.3s;
+font-weight:500;
+}
+
+nav a:hover{
+color:#ff4f87;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:120px 8%;
+gap:60px;
+}
+
+.text{
+flex:1;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(20px);
+padding:45px;
+border-radius:30px;
+box-shadow:0 20px 45px rgba(0,0,0,.08);
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.text h1{
+font-size:60px;
+color:#ff4f87;
+margin-bottom:10px;
+}
+
+.text h2{
+font-size:28px;
+font-weight:400;
+margin-bottom:20px;
+}
+
+.text p{
+font-size:18px;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 35px;
+background:#ff77aa;
+color:white;
+border-radius:50px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(255,119,170,.4);
+}
+
+.photo{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.photo img{
+width:340px;
+height:340px;
+border-radius:50%;
+object-fit:cover;
+border:8px solid white;
+box-shadow:0 15px 30px rgba(0,0,0,.12);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+.section{
+padding:100px 8%;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+color:#ff4f87;
+margin-bottom:50px;
+}
+</style>
 
 </head>
 
 <body>
 
-    <!-- เมนู -->
-    < <nav class="navbar">
+<header>
 
-            <div class="logo">
-                🌸 Portfolio
-            </div>
+<div class="logo">Portfolio</div>
 
-            <ul class="menu">
+<nav>
 
-                <li><a href="index.html">หน้าแรก</a></li>
+<ul>
 
-                <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+<li><a href="#home">หน้าแรก</a></li>
 
-                <li><a href="education.html">ประวัติการศึกษา</a></li>
+<li><a href="#about">ประวัติ</a></li>
 
-                <li><a href="projects.html">ผลงาน</a></li>
+<li><a href="#education">การศึกษา</a></li>
 
-                <li><a href="contact.html">ติดต่อ</a></li>
+<li><a href="#works">ผลงาน</a></li>
 
-            </ul>
+<li><a href="#contact">ติดต่อ</a></li>
 
-        </nav>header><!-- Hero -->
+</ul>
 
-    <section class="hero">
+</nav>
 
-        <img src="images/profile.jpg" class="profile-img">
+</header>
 
-        <h1>สวัสดีค่ะ</h1>
+<section class="hero" id="home">
 
-        <h2>ฉันชื่อ สุธิดา เกตุแก้ว</h2>
+<div class="text">
 
-        <p>
-            ยินดีต้อนรับเข้าสู่เว็บไซต์ Portfolio
-            เว็บไซต์นี้จัดทำขึ้นเพื่อรวบรวมประวัติส่วนตัว
-            ประวัติการศึกษา ผลงาน และช่องทางการติดต่อ
-        </p>
+<h1>Portfolio</h1>
 
-        <a href="profile.html" class="btn">
-            เข้าสู่ Portfolio
-        </a>
+<h2>สุธิดา เกตุแก้ว</h2>
 
-    </section>
+<p>
+ยินดีต้อนรับสู่เว็บไซต์แฟ้มสะสมผลงาน (Portfolio)
+จัดทำขึ้นเพื่อรวบรวมประวัติส่วนตัว ประวัติการศึกษา ผลงาน
+และช่องทางการติดต่อ โดยออกแบบในโทนสีชมพูพาสเทล
+เรียบง่าย ทันสมัย และใช้งานได้บนทุกอุปกรณ์
+</p>
+
+<a href="#about" class="btn">เริ่มต้น</a>
+
+</div>
+
+<div class="photo">
+
+<img src="images/profile.jpg" alt="Profile">
+
+</div>
+
+</section>
+```
+```html
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section">
+
+<h2 class="title">ประวัติส่วนตัว</h2>
+
+<div class="glass">
+
+<div class="info">
+
+<div class="item">
+<h3>👤 ชื่อ - สกุล</h3>
+<p>สุธิดา เกตุแก้ว</p>
+</div>
+
+<div class="item">
+<h3>🎂 วันเกิด</h3>
+<p>กรอกวันเกิดของคุณ</p>
+</div>
+
+<div class="item">
+<h3>🎓 กำลังศึกษา</h3>
+<p>ชั้นมัธยมศึกษาปีที่ 6</p>
+</div>
+
+<div class="item">
+<h3>🏫 โรงเรียน</h3>
+<p>กรอกชื่อโรงเรียนของคุณ</p>
+</div>
+
+<div class="item">
+<h3>📍 ที่อยู่</h3>
+<p>จังหวัด.............</p>
+</div>
+
+<div class="item">
+<h3>📧 Email</h3>
+<p>example@gmail.com</p>
+</div>
+
+<div class="item">
+<h3>📱 โทรศัพท์</h3>
+<p>08x-xxx-xxxx</p>
+</div>
+
+<div class="item">
+<h3>💡 งานอดิเรก</h3>
+<p>
+อ่านหนังสือ
+<br>
+ฟังเพลง
+<br>
+ออกกำลังกาย
+<br>
+เขียนโปรแกรม
+</p>
+</div>
+
+<div class="item">
+<h3>⭐ ความสามารถพิเศษ</h3>
+
+<p>HTML</p>
+
+<div class="skill">
+<div class="bar html">90%</div>
+</div>
+
+<p>CSS</p>
+
+<div class="skill">
+<div class="bar css">85%</div>
+</div>
+
+<p>JavaScript</p>
+
+<div class="skill">
+<div class="bar js">75%</div>
+</div>
+
+</div>
+
+<div class="item">
+
+<h3>💖 คติประจำใจ</h3>
+
+<p>
+
+"ความพยายามอยู่ที่ไหน
+
+ความสำเร็จอยู่ที่นั่น"
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* Glass */
+
+.glass{
+
+background:rgba(255,255,255,.35);
+
+backdrop-filter:blur(15px);
+
+padding:40px;
+
+border-radius:25px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* Grid */
+
+.info{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+/* Card */
+
+.item{
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+transition:.35s;
+
+box-shadow:0 10px 20px rgba(0,0,0,.05);
+
+}
+
+.item:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 20px 35px rgba(255,105,180,.25);
+
+}
+
+/* Skill */
+
+.skill{
+
+width:100%;
+
+height:12px;
+
+background:#ffd6e7;
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-bottom:15px;
+
+}
+
+.bar{
+
+height:100%;
+
+background:linear-gradient(90deg,#ff7eb3,#ff4f87);
+
+color:white;
+
+font-size:10px;
+
+text-align:right;
+
+padding-right:8px;
+
+line-height:12px;
+
+border-radius:30px;
+
+animation:grow 2s;
+
+}
+
+.html{
+
+width:90%;
+
+}
+
+.css{
+
+width:85%;
+
+}
+
+.js{
+
+width:75%;
+
+}
+
+@keyframes grow{
+
+from{
+
+width:0;
+
+}
+
+}
+
+</style>
+```
+```html
+<!-- ================= EDUCATION ================= -->
+
+<section id="education" class="section">
+
+<h2 class="title">ประวัติการศึกษา</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="year">
+2012 - 2014
+</div>
+
+<div class="content">
+
+<img src="images/school1.jpg" alt="อนุบาล">
+
+<h3>ระดับอนุบาล</h3>
+
+<p>
+โรงเรียน..............................
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="year">
+2015 - 2020
+</div>
+
+<div class="content">
+
+<img src="images/school2.jpg" alt="ประถม">
+
+<h3>ระดับประถมศึกษา</h3>
+
+<p>
+โรงเรียน..............................
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="year">
+2021 - 2023
+</div>
+
+<div class="content">
+
+<img src="images/school3.jpg" alt="มัธยมต้น">
+
+<h3>ระดับมัธยมศึกษาตอนต้น</h3>
+
+<p>
+โรงเรียน..............................
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="year">
+2024 - ปัจจุบัน
+</div>
+
+<div class="content">
+
+<img src="images/school4.jpg" alt="มัธยมปลาย">
+
+<h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+
+<p>
+กำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 6
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* ===== Timeline ===== */
+
+.timeline{
+
+position:relative;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:0;
+
+width:4px;
+
+height:100%;
+
+background:#ff8db8;
+
+transform:translateX(-50%);
+
+}
+
+.timeline-item{
+
+position:relative;
+
+width:50%;
+
+padding:20px 40px;
+
+animation:fadeUp 1s ease;
+
+}
+
+.timeline-item:nth-child(odd){
+
+left:0;
+
+}
+
+.timeline-item:nth-child(even){
+
+left:50%;
+
+}
+
+.content{
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.content:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 35px rgba(255,105,180,.25);
+
+}
+
+.content img{
+
+width:100%;
+
+height:180px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+margin-bottom:15px;
+
+}
+
+.year{
+
+position:absolute;
+
+top:30px;
+
+right:-65px;
+
+background:#ff5c8a;
+
+color:white;
+
+padding:8px 18px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:bold;
+
+}
+
+.timeline-item:nth-child(even) .year{
+
+left:-65px;
+
+right:auto;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===== Responsive ===== */
+
+@media(max-width:768px){
+
+.timeline::before{
+
+left:20px;
+
+}
+
+.timeline-item{
+
+width:100%;
+
+left:0 !important;
+
+padding-left:60px;
+
+padding-right:20px;
+
+}
+
+.year{
+
+left:40px !important;
+
+right:auto;
+
+}
+
+}
+
+</style>
+```
+```html
+<!-- ================= ผลงาน ================= -->
+
+<section id="works" class="section">
+
+<h2 class="title">ผลงาน</h2>
+
+<div class="work-grid">
+
+<div class="work-card">
+
+<img src="images/work1.jpg" alt="ผลงาน">
+
+<div class="work-content">
+
+<h3>โครงงานเว็บไซต์ Portfolio</h3>
+
+<p>
+พัฒนาเว็บไซต์ Portfolio ด้วย HTML CSS และ JavaScript
+เผยแพร่ผ่าน GitHub Pages
+</p>
+
+<a href="#" class="btn-work">รายละเอียด</a>
+
+</div>
+
+</div>
+
+<div class="work-card">
+
+<img src="images/work2.jpg" alt="ผลงาน">
+
+<div class="work-content">
+
+<h3>กิจกรรมจิตอาสา</h3>
+
+<p>
+เข้าร่วมกิจกรรมบำเพ็ญประโยชน์และพัฒนาชุมชน
+</p>
+
+<a href="#" class="btn-work">รายละเอียด</a>
+
+</div>
+
+</div>
+
+<div class="work-card">
+
+<img src="images/work3.jpg" alt="ผลงาน">
+
+<div class="work-content">
+
+<h3>การแข่งขันทักษะคอมพิวเตอร์</h3>
+
+<p>
+เข้าร่วมการแข่งขันด้านการออกแบบเว็บไซต์
+</p>
+
+<a href="#" class="btn-work">รายละเอียด</a>
+
+</div>
+
+</div>
+
+<div class="work-card">
+
+<img src="images/work4.jpg" alt="ผลงาน">
+
+<div class="work-content">
+
+<h3>เกียรติบัตร</h3>
+
+<p>
+รวบรวมเกียรติบัตรจากการแข่งขันและกิจกรรมต่าง ๆ
+</p>
+
+<a href="#" class="btn-work">รายละเอียด</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* ===== ผลงาน ===== */
+
+.work-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.work-card{
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(15px);
+
+border-radius:25px;
+
+overflow:hidden;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transition:.4s;
+
+}
+
+.work-card:hover{
+
+transform:translateY(-12px) scale(1.02);
+
+box-shadow:0 25px 40px rgba(255,105,180,.25);
+
+}
+
+.work-card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+transition:.4s;
+
+}
+
+.work-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.work-content{
+
+padding:20px;
+
+}
+
+.work-content h3{
+
+color:#ff4f87;
+
+margin-bottom:10px;
+
+}
+
+.work-content p{
+
+line-height:1.7;
+
+margin-bottom:20px;
+
+}
+
+.btn-work{
+
+display:inline-block;
+
+padding:10px 22px;
+
+background:#ff77aa;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:30px;
+
+transition:.3s;
+
+}
+
+.btn-work:hover{
+
+background:#ff4f87;
+
+box-shadow:0 8px 18px rgba(255,105,180,.4);
+
+}
+
+</style>
+```
+```html
+<!-- ================= ติดต่อ ================= -->
+
+<section id="contact" class="section">
+
+<h2 class="title">ช่องทางการติดต่อ</h2>
+
+<div class="glass">
+
+<div class="info">
+
+<div class="item">
+<h3>📧 Email</h3>
+<p>example@gmail.com</p>
+</div>
+
+<div class="item">
+<h3>📱 โทรศัพท์</h3>
+<p>08x-xxx-xxxx</p>
+</div>
+
+<div class="item">
+<h3>💙 Facebook</h3>
+<p>https://facebook.com/yourname</p>
+</div>
+
+<div class="item">
+<h3>📸 Instagram</h3>
+<p>@yourname</p>
+</div>
+
+<div class="item">
+<h3>💻 GitHub</h3>
+<p>https://github.com/yourname</p>
+</div>
+
+<div class="item">
+<h3>📍 ที่อยู่</h3>
+<p>จังหวัด.......................</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Portfolio | จัดทำโดย สุธิดา เกตุแก้ว
+
+</p>
+
+</footer>
+
+<button id="topBtn">↑</button>
+
+<script>
+
+/* ปุ่มกลับด้านบน */
+
+const topBtn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+
+if(document.documentElement.scrollTop>300){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+}
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+/* Scroll Animation */
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".item,.work-card,.timeline-item").forEach(el=>{
+
+observer.observe(el);
+
+});
+
+</script>
+
+<style>
+
+/* Animation */
+
+.item,
+.work-card,
+.timeline-item{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:1s;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* ปุ่มกลับบน */
+
+#topBtn{
+
+position:fixed;
+
+bottom:30px;
+
+right:30px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:#ff5c8a;
+
+color:white;
+
+font-size:22px;
+
+cursor:pointer;
+
+display:none;
+
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+transition:.3s;
+
+}
+
+#topBtn:hover{
+
+transform:scale(1.1);
+
+background:#ff3f79;
+
+}
+
+footer{
+
+background:#ff9fc3;
+
+padding:30px;
+
+text-align:center;
+
+color:white;
+
+margin-top:80px;
+
+}
+
+@media(max-width:768px){
+
+header{
+
+flex-direction:column;
+
+padding:15px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.photo img{
+
+width:250px;
+
+height:250px;
+
+}
+
+}
+
+</style>
 
 </body>
 </html>
+```
+
