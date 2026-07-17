@@ -1,172 +1,356 @@
-```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Portfolio | สุธิดา เกตุแก้ว</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Prompt',sans-serif;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Prompt',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(-45deg,#FFE4EC,#FFD6E8,#FFF0F5,#FFD1DC);
-    background-size:400% 400%;
-    animation:bgMove 12s ease infinite;
-    color:#555;
-    overflow-x:hidden;
+
+background:linear-gradient(-45deg,#ffd6e8,#ffe4ef,#fff5f8,#ffc2d1);
+
+background-size:400% 400%;
+
+animation:bg 15s infinite ease;
+
+overflow-x:hidden;
+
+color:#444;
+
 }
 
-@keyframes bgMove{
+@keyframes bg{
+
 0%{background-position:0% 50%;}
+
 50%{background-position:100% 50%;}
+
 100%{background-position:0% 50%;}
+
 }
+
+/* Glow */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+background:rgba(255,182,193,.25);
+
+filter:blur(140px);
+
+top:-250px;
+
+left:-200px;
+
+z-index:-1;
+
+animation:glow 8s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(200px,120px);
+
+}
+
+}
+
+/* Header */
 
 header{
+
 position:fixed;
+
 top:0;
+
 left:0;
+
 width:100%;
+
 padding:18px 8%;
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
+
 background:rgba(255,255,255,.35);
-backdrop-filter:blur(15px);
+
+backdrop-filter:blur(18px);
+
 box-shadow:0 8px 20px rgba(0,0,0,.08);
+
 z-index:999;
+
 }
 
 .logo{
+
 font-size:30px;
+
 font-weight:700;
+
 color:#ff4f87;
+
 }
 
 nav ul{
+
 display:flex;
-list-style:none;
+
 gap:35px;
+
+list-style:none;
+
 }
 
 nav a{
+
 text-decoration:none;
-font-size:18px;
+
 color:#555;
-transition:.3s;
+
+font-size:17px;
+
 font-weight:500;
+
+transition:.3s;
+
 }
 
 nav a:hover{
+
 color:#ff4f87;
+
 }
+
+/* Hero */
 
 .hero{
+
 min-height:100vh;
+
 display:flex;
-justify-content:center;
+
 align-items:center;
+
+justify-content:space-between;
+
 padding:120px 8%;
+
 gap:60px;
+
 }
 
-.text{
+.left{
+
 flex:1;
-background:rgba(255,255,255,.35);
-backdrop-filter:blur(20px);
-padding:45px;
-border-radius:30px;
-box-shadow:0 20px 45px rgba(0,0,0,.08);
+
 animation:fade 1s;
+
 }
 
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+.left h3{
 
-.text h1{
-font-size:60px;
-color:#ff4f87;
-margin-bottom:10px;
-}
-
-.text h2{
 font-size:28px;
-font-weight:400;
-margin-bottom:20px;
+
+color:#ff6b9e;
+
+margin-bottom:10px;
+
 }
 
-.text p{
+.left h1{
+
+font-size:70px;
+
+color:#ff4f87;
+
+margin-bottom:15px;
+
+}
+
+.left h2{
+
+font-size:30px;
+
+font-weight:400;
+
+margin-bottom:25px;
+
+}
+
+.left p{
+
 font-size:18px;
-line-height:1.8;
-margin-bottom:30px;
+
+line-height:1.9;
+
+margin-bottom:35px;
+
+max-width:600px;
+
+}
+
+.button{
+
+display:flex;
+
+gap:20px;
+
 }
 
 .btn{
-display:inline-block;
+
 padding:14px 35px;
-background:#ff77aa;
-color:white;
-border-radius:50px;
+
+border-radius:40px;
+
 text-decoration:none;
-transition:.3s;
+
+font-size:17px;
+
+font-weight:500;
+
+transition:.35s;
+
 }
 
-.btn:hover{
+.btn1{
+
+background:#ff6fa5;
+
+color:white;
+
+}
+
+.btn1:hover{
+
 transform:translateY(-5px);
-box-shadow:0 10px 20px rgba(255,119,170,.4);
+
+box-shadow:0 10px 25px rgba(255,111,165,.4);
+
 }
 
-.photo{
+.btn2{
+
+border:2px solid #ff6fa5;
+
+color:#ff6fa5;
+
+}
+
+.btn2:hover{
+
+background:#ff6fa5;
+
+color:white;
+
+}
+
+/* รูป */
+
+.right{
+
 flex:1;
+
 display:flex;
+
 justify-content:center;
+
 }
 
-.photo img{
-width:340px;
-height:340px;
+.right img{
+
+width:380px;
+
+height:380px;
+
 border-radius:50%;
+
 object-fit:cover;
-border:8px solid white;
-box-shadow:0 15px 30px rgba(0,0,0,.12);
+
+border:10px solid white;
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
 animation:float 4s ease-in-out infinite;
+
 }
 
 @keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0);}
+
+0%{
+
+transform:translateY(0);
+
 }
 
-.section{
-padding:100px 8%;
+50%{
+
+transform:translateY(-18px);
+
 }
 
-.title{
-text-align:center;
-font-size:42px;
-color:#ff4f87;
-margin-bottom:50px;
+100%{
+
+transform:translateY(0);
+
 }
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
 </style>
 
 </head>
@@ -181,15 +365,15 @@ margin-bottom:50px;
 
 <ul>
 
-<li><a href="#home">หน้าแรก</a></li>
+<li><a href="index.html">Home</a></li>
 
-<li><a href="#about">ประวัติ</a></li>
+<li><a href="about.html">About</a></li>
 
-<li><a href="#education">การศึกษา</a></li>
+<li><a href="education.html">Education</a></li>
 
-<li><a href="#works">ผลงาน</a></li>
+<li><a href="projects.html">Projects</a></li>
 
-<li><a href="#contact">ติดต่อ</a></li>
+<li><a href="contact.html">Contact</a></li>
 
 </ul>
 
@@ -197,128 +381,103 @@ margin-bottom:50px;
 
 </header>
 
-<section class="hero" id="home">
+<section class="hero">
 
-<div class="text">
+<div class="left">
 
-<h1>Portfolio</h1>
+<h3>👋 Hello, I'm</h3>
 
-<h2>สุธิดา เกตุแก้ว</h2>
+<h1>สุธิดา เกตุแก้ว</h1>
+
+<h2>Student | Future Developer</h2>
 
 <p>
-ยินดีต้อนรับสู่เว็บไซต์แฟ้มสะสมผลงาน (Portfolio)
-จัดทำขึ้นเพื่อรวบรวมประวัติส่วนตัว ประวัติการศึกษา ผลงาน
-และช่องทางการติดต่อ โดยออกแบบในโทนสีชมพูพาสเทล
-เรียบง่าย ทันสมัย และใช้งานได้บนทุกอุปกรณ์
+
+ยินดีต้อนรับสู่เว็บไซต์ Portfolio ของฉัน
+
+เว็บไซต์นี้รวบรวมประวัติส่วนตัว ประวัติการศึกษา ผลงาน และช่องทางการติดต่อ
+เพื่อใช้ประกอบการศึกษาต่อและแสดงผลงานของฉัน
+
 </p>
 
-<a href="#about" class="btn">เริ่มต้น</a>
+<div class="button">
+
+<a href="about.html" class="btn btn1">
+
+About Me
+
+</a>
+
+<a href="projects.html" class="btn btn2">
+
+My Projects
+
+</a>
 
 </div>
 
-<div class="photo">
+</div>
+
+<div class="right">
 
 <img src="images/profile.jpg" alt="Profile">
 
 </div>
 
 </section>
-```
-```html
-<!-- ================= ABOUT ================= -->
+<!-- ================= My Skills ================= -->
 
-<section id="about" class="section">
+<section class="skills">
 
-<h2 class="title">ประวัติส่วนตัว</h2>
+<h2>My Skills</h2>
 
-<div class="glass">
+<div class="skill-container">
 
-<div class="info">
+<div class="card">
 
-<div class="item">
-<h3>👤 ชื่อ - สกุล</h3>
-<p>สุธิดา เกตุแก้ว</p>
-</div>
+<div class="icon">💻</div>
 
-<div class="item">
-<h3>🎂 วันเกิด</h3>
-<p>04 มกราคม 2009</p>
-</div>
-
-<div class="item">
-<h3>🎓 กำลังศึกษา</h3>
-<p>ชั้นมัธยมศึกษาปีที่ 6</p>
-</div>
-
-<div class="item">
-<h3>🏫 โรงเรียน</h3>
-<p>โรงเรียนพานทอง</p>
-</div>
-
-<div class="item">
-<h3>📍 ที่อยู่</h3>
-<p>จังหวัดชลบุรี</p>
-</div>
-
-<div class="item">
-<h3>📧 Email</h3>
-<p>ketkaew@gmail.com</p>
-</div>
-
-<div class="item">
-<h3>📱 โทรศัพท์</h3>
-<p>065-662-1037</p>
-</div>
-
-<div class="item">
-<h3>💡 งานอดิเรก</h3>
-<p>
-อ่านหนังสือ
-<br>
-ฟังเพลง
-<br>
-ออกกำลังกาย
-<br>
-ร้องเพลง
-</p>
-</div>
-
-<div class="item">
-<h3>⭐ ความสามารถพิเศษ</h3>
-
-<p>HTML</p>
-
-<div class="skill">
-<div class="bar html">90%</div>
-</div>
-
-<p>CSS</p>
-
-<div class="skill">
-<div class="bar css">85%</div>
-</div>
-
-<p>JavaScript</p>
-
-<div class="skill">
-<div class="bar js">75%</div>
-</div>
-
-</div>
-
-<div class="item">
-
-<h3>💖 คติประจำใจ</h3>
+<h3>Web Development</h3>
 
 <p>
 
-"ความพยายามอยู่ที่ไหน
+สามารถพัฒนาเว็บไซต์ด้วย
 
-ความสำเร็จอยู่ที่นั่น"
+HTML CSS JavaScript
 
 </p>
 
 </div>
+
+<div class="card">
+
+<div class="icon">🎨</div>
+
+<h3>Graphic Design</h3>
+
+<p>
+
+ออกแบบโปสเตอร์
+
+Canva Photoshop
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">🤝</div>
+
+<h3>Teamwork</h3>
+
+<p>
+
+สามารถทำงานร่วมกับผู้อื่น
+
+มีความรับผิดชอบ
+
+</p>
 
 </div>
 
@@ -326,512 +485,143 @@ margin-bottom:50px;
 
 </section>
 
+<!-- ================= Statistics ================= -->
+
+<section class="stats">
+
+<div class="stat">
+
+<h1>4+</h1>
+
+<p>Years Learning</p>
+
+</div>
+
+<div class="stat">
+
+<h1>10+</h1>
+
+<p>Certificates</p>
+
+</div>
+
+<div class="stat">
+
+<h1>20+</h1>
+
+<p>Activities</p>
+
+</div>
+
+<div class="stat">
+
+<h1>100%</h1>
+
+<p>Determination</p>
+
+</div>
+
+</section>
+
 <style>
 
-/* Glass */
+.skills{
 
-.glass{
+padding:90px 8%;
 
-background:rgba(255,255,255,.35);
-
-backdrop-filter:blur(15px);
-
-padding:40px;
-
-border-radius:25px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
 
 }
 
-/* Grid */
+.skills h2{
 
-.info{
+font-size:42px;
+
+color:#ff4f87;
+
+margin-bottom:50px;
+
+}
+
+.skill-container{
 
 display:grid;
 
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 
-gap:25px;
-
-}
-
-/* Card */
-
-.item{
-
-background:white;
-
-padding:25px;
-
-border-radius:20px;
-
-transition:.35s;
-
-box-shadow:0 10px 20px rgba(0,0,0,.05);
-
-}
-
-.item:hover{
-
-transform:translateY(-10px);
-
-box-shadow:0 20px 35px rgba(255,105,180,.25);
-
-}
-
-/* Skill */
-
-.skill{
-
-width:100%;
-
-height:12px;
-
-background:#ffd6e7;
-
-border-radius:30px;
-
-overflow:hidden;
-
-margin-bottom:15px;
-
-}
-
-.bar{
-
-height:100%;
-
-background:linear-gradient(90deg,#ff7eb3,#ff4f87);
-
-color:white;
-
-font-size:10px;
-
-text-align:right;
-
-padding-right:8px;
-
-line-height:12px;
-
-border-radius:30px;
-
-animation:grow 2s;
-
-}
-
-.html{
-
-width:90%;
-
-}
-
-.css{
-
-width:85%;
-
-}
-
-.js{
-
-width:75%;
-
-}
-
-@keyframes grow{
-
-from{
-
-width:0;
-
-}
-
-}
-
-</style>
-```
-```html
-<!-- ================= EDUCATION ================= -->
-
-<section id="education" class="section">
-
-<h2 class="title">ประวัติการศึกษา</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-
-<div class="year">
-2012 - 2014
-</div>
-
-<div class="content">
-
-<img src="images/school1.jpg" alt="อนุบาล">
-
-<h3>ระดับอนุบาล</h3>
-
-<p>
-โรงเรียน..............................
-</p>
-
-</div>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="year">
-2015 - 2020
-</div>
-
-<div class="content">
-
-<img src="images/school2.jpg" alt="ประถม">
-
-<h3>ระดับประถมศึกษา</h3>
-
-<p>
-โรงเรียน..............................
-</p>
-
-</div>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="year">
-2021 - 2023
-</div>
-
-<div class="content">
-
-<img src="images/school3.jpg" alt="มัธยมต้น">
-
-<h3>ระดับมัธยมศึกษาตอนต้น</h3>
-
-<p>
-โรงเรียน..............................
-</p>
-
-</div>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="year">
-2024 - ปัจจุบัน
-</div>
-
-<div class="content">
-
-<img src="images/school4.jpg" alt="มัธยมปลาย">
-
-<h3>ระดับมัธยมศึกษาตอนปลาย</h3>
-
-<p>
-กำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 6
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<style>
-
-/* ===== Timeline ===== */
-
-.timeline{
-
-position:relative;
-
-max-width:900px;
-
-margin:auto;
-
-}
-
-.timeline::before{
-
-content:"";
-
-position:absolute;
-
-left:50%;
-
-top:0;
-
-width:4px;
-
-height:100%;
-
-background:#ff8db8;
-
-transform:translateX(-50%);
-
-}
-
-.timeline-item{
-
-position:relative;
-
-width:50%;
-
-padding:20px 40px;
-
-animation:fadeUp 1s ease;
-
-}
-
-.timeline-item:nth-child(odd){
-
-left:0;
-
-}
-
-.timeline-item:nth-child(even){
-
-left:50%;
-
-}
-
-.content{
-
-background:white;
-
-padding:20px;
-
-border-radius:20px;
-
-box-shadow:0 10px 20px rgba(0,0,0,.08);
-
-transition:.3s;
-
-}
-
-.content:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 20px 35px rgba(255,105,180,.25);
-
-}
-
-.content img{
-
-width:100%;
-
-height:180px;
-
-object-fit:cover;
-
-border-radius:15px;
-
-margin-bottom:15px;
-
-}
-
-.year{
-
-position:absolute;
-
-top:30px;
-
-right:-65px;
-
-background:#ff5c8a;
-
-color:white;
-
-padding:8px 18px;
-
-border-radius:30px;
-
-font-size:14px;
-
-font-weight:bold;
-
-}
-
-.timeline-item:nth-child(even) .year{
-
-left:-65px;
-
-right:auto;
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-/* ===== Responsive ===== */
-
-@media(max-width:768px){
-
-.timeline::before{
-
-left:20px;
-
-}
-
-.timeline-item{
-
-width:100%;
-
-left:0 !important;
-
-padding-left:60px;
-
-padding-right:20px;
-
-}
-
-.year{
-
-left:40px !important;
-
-right:auto;
-
-}
-
-}
-
-</style>
-```
-```html
-<!-- ================= ผลงาน ================= -->
-
-<section id="works" class="section">
-
-<h2 class="title">ผลงาน</h2>
-
-<div class="work-grid">
-
-<div class="work-card">
-
-<img src="images/work1.jpg" alt="ผลงาน">
-
-<div class="work-content">
-
-<h3>โครงงานเว็บไซต์ Portfolio</h3>
-
-<p>
-พัฒนาเว็บไซต์ Portfolio ด้วย HTML CSS และ JavaScript
-เผยแพร่ผ่าน GitHub Pages
-</p>
-
-<a href="#" class="btn-work">รายละเอียด</a>
-
-</div>
-
-</div>
-
-<div class="work-card">
-
-<img src="images/work2.jpg" alt="ผลงาน">
-
-<div class="work-content">
-
-<h3>กิจกรรมจิตอาสา</h3>
-
-<p>
-เข้าร่วมกิจกรรมบำเพ็ญประโยชน์และพัฒนาชุมชน
-</p>
-
-<a href="#" class="btn-work">รายละเอียด</a>
-
-</div>
-
-</div>
-
-<div class="work-card">
-
-<img src="images/work3.jpg" alt="ผลงาน">
-
-<div class="work-content">
-
-<h3>การแข่งขันทักษะคอมพิวเตอร์</h3>
-
-<p>
-เข้าร่วมการแข่งขันด้านการออกแบบเว็บไซต์
-</p>
-
-<a href="#" class="btn-work">รายละเอียด</a>
-
-</div>
-
-</div>
-
-<div class="work-card">
-
-<img src="images/work4.jpg" alt="ผลงาน">
-
-<div class="work-content">
-
-<h3>เกียรติบัตร</h3>
-
-<p>
-รวบรวมเกียรติบัตรจากการแข่งขันและกิจกรรมต่าง ๆ
-</p>
-
-<a href="#" class="btn-work">รายละเอียด</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<style>
-
-/* ===== ผลงาน ===== */
-
-.work-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
 gap:30px;
 
-margin-top:40px;
-
 }
 
-.work-card{
+.card{
 
-background:rgba(255,255,255,.45);
+background:rgba(255,255,255,.4);
 
 backdrop-filter:blur(15px);
 
+padding:35px;
+
 border-radius:25px;
 
-overflow:hidden;
+transition:.4s;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+transform:translateY(-15px);
+
+box-shadow:0 20px 40px rgba(255,105,180,.25);
+
+}
+
+.icon{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+.card h3{
+
+color:#ff4f87;
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+line-height:1.8;
+
+}
+
+/* Statistics */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:25px;
+
+padding:60px 8%;
+
+}
+
+.stat{
+
+background:white;
+
+padding:30px;
+
+border-radius:25px;
+
+text-align:center;
 
 box-shadow:0 10px 25px rgba(0,0,0,.08);
 
@@ -839,15 +629,232 @@ transition:.4s;
 
 }
 
-.work-card:hover{
+.stat:hover{
 
-transform:translateY(-12px) scale(1.02);
-
-box-shadow:0 25px 40px rgba(255,105,180,.25);
+transform:scale(1.05);
 
 }
 
-.work-card img{
+.stat h1{
+
+font-size:50px;
+
+color:#ff4f87;
+
+margin-bottom:10px;
+
+}
+
+.stat p{
+
+font-size:18px;
+
+color:#666;
+
+}
+
+/* ซากุระ */
+
+.sakura{
+
+position:fixed;
+
+top:-20px;
+
+font-size:24px;
+
+pointer-events:none;
+
+animation:fall linear forwards;
+
+z-index:0;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-10vh) rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+<script>
+
+/* ดอกซากุระ */
+
+setInterval(()=>{
+
+const flower=document.createElement("div");
+
+flower.className="sakura";
+
+flower.innerHTML="🌸";
+
+flower.style.left=Math.random()*100+"vw";
+
+flower.style.animationDuration=(Math.random()*4+5)+"s";
+
+flower.style.fontSize=(Math.random()*20+18)+"px";
+
+document.body.appendChild(flower);
+
+setTimeout(()=>{
+
+flower.remove();
+
+},9000);
+
+},500);
+
+</script>
+<!-- ================= Featured Projects ================= -->
+
+<section class="projects">
+
+<h2>Featured Projects</h2>
+
+<div class="project-container">
+
+<div class="project-card">
+
+<img src="images/work1.jpg" alt="Project">
+
+<h3>Portfolio Website</h3>
+
+<p>
+เว็บไซต์ Portfolio ที่พัฒนาด้วย HTML, CSS และ JavaScript
+</p>
+
+<a href="projects.html">ดูเพิ่มเติม →</a>
+
+</div>
+
+<div class="project-card">
+
+<img src="images/work2.jpg" alt="Project">
+
+<h3>Certificate</h3>
+
+<p>
+รวบรวมเกียรติบัตรและผลงานที่ภาคภูมิใจ
+</p>
+
+<a href="projects.html">ดูเพิ่มเติม →</a>
+
+</div>
+
+<div class="project-card">
+
+<img src="images/work3.jpg" alt="Project">
+
+<h3>School Activities</h3>
+
+<p>
+กิจกรรมที่เข้าร่วมทั้งภายในและภายนอกโรงเรียน
+</p>
+
+<a href="projects.html">ดูเพิ่มเติม →</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Footer ================= -->
+
+<footer>
+
+<h2>Thank you for visiting 💖</h2>
+
+<p>
+
+Portfolio by <strong>สุธิดา เกตุแก้ว</strong>
+
+</p>
+
+<p>
+
+© 2026 All Rights Reserved
+
+</p>
+
+</footer>
+
+<button id="topBtn">⬆</button>
+
+<style>
+
+/* ===== Projects ===== */
+
+.projects{
+
+padding:100px 8%;
+
+text-align:center;
+
+}
+
+.projects h2{
+
+font-size:42px;
+
+color:#ff4f87;
+
+margin-bottom:50px;
+
+}
+
+.project-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.project-card{
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+overflow:hidden;
+
+transition:.4s;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.project-card:hover{
+
+transform:translateY(-15px);
+
+box-shadow:0 25px 45px rgba(255,105,180,.25);
+
+}
+
+.project-card img{
 
 width:100%;
 
@@ -859,41 +866,39 @@ transition:.4s;
 
 }
 
-.work-card:hover img{
+.project-card:hover img{
 
 transform:scale(1.08);
 
 }
 
-.work-content{
+.project-card h3{
 
-padding:20px;
-
-}
-
-.work-content h3{
+margin:20px 0 10px;
 
 color:#ff4f87;
 
-margin-bottom:10px;
-
 }
 
-.work-content p{
+.project-card p{
 
-line-height:1.7;
+padding:0 20px;
+
+line-height:1.8;
 
 margin-bottom:20px;
 
 }
 
-.btn-work{
+.project-card a{
 
 display:inline-block;
 
-padding:10px 22px;
+margin-bottom:25px;
 
-background:#ff77aa;
+padding:10px 24px;
+
+background:#ff6fa5;
 
 color:white;
 
@@ -905,164 +910,43 @@ transition:.3s;
 
 }
 
-.btn-work:hover{
+.project-card a:hover{
 
 background:#ff4f87;
 
-box-shadow:0 8px 18px rgba(255,105,180,.4);
+}
+
+/* ===== Footer ===== */
+
+footer{
+
+margin-top:80px;
+
+padding:50px;
+
+text-align:center;
+
+background:#ff9fc3;
+
+color:white;
 
 }
 
-</style>
-```
-```html
-<!-- ================= ติดต่อ ================= -->
+footer h2{
 
-<section id="contact" class="section">
-
-<h2 class="title">ช่องทางการติดต่อ</h2>
-
-<div class="glass">
-
-<div class="info">
-
-<div class="item">
-<h3>📧 Email</h3>
-<p>ketkaew@gmail.com</p>
-</div>
-
-<div class="item">
-<h3>📱 โทรศัพท์</h3>
-<p>065-662-1037</p>
-</div>
-
-<div class="item">
-<h3>💙 Facebook</h3>
-<p>https://facebook.com/yourname</p>
-</div>
-
-<div class="item">
-<h3>📸 Instagram</h3>
-<p>@yourname</p>
-</div>
-
-<div class="item">
-<h3>💻 GitHub</h3>
-<p>https://github.com/yourname</p>
-</div>
-
-<div class="item">
-<h3>📍 ที่อยู่</h3>
-<p>จังหวัด ชลบุรี</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>
-
-© 2026 Portfolio | จัดทำโดย สุธิดา เกตุแก้ว
-
-</p>
-
-</footer>
-
-<button id="topBtn">↑</button>
-
-<script>
-
-/* ปุ่มกลับด้านบน */
-
-const topBtn=document.getElementById("topBtn");
-
-window.onscroll=function(){
-
-if(document.documentElement.scrollTop>300){
-
-topBtn.style.display="block";
-
-}else{
-
-topBtn.style.display="none";
+margin-bottom:15px;
 
 }
 
-}
-
-topBtn.onclick=function(){
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-}
-
-/* Scroll Animation */
-
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-});
-
-document.querySelectorAll(".item,.work-card,.timeline-item").forEach(el=>{
-
-observer.observe(el);
-
-});
-
-</script>
-
-<style>
-
-/* Animation */
-
-.item,
-.work-card,
-.timeline-item{
-
-opacity:0;
-
-transform:translateY(40px);
-
-transition:1s;
-
-}
-
-.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-/* ปุ่มกลับบน */
+/* ===== Back To Top ===== */
 
 #topBtn{
 
 position:fixed;
 
-bottom:30px;
-
 right:30px;
+
+bottom:30px;
 
 width:55px;
 
@@ -1072,7 +956,7 @@ border:none;
 
 border-radius:50%;
 
-background:#ff5c8a;
+background:#ff4f87;
 
 color:white;
 
@@ -1082,9 +966,9 @@ cursor:pointer;
 
 display:none;
 
-box-shadow:0 10px 20px rgba(0,0,0,.2);
-
 transition:.3s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
 
 }
 
@@ -1092,71 +976,32 @@ transition:.3s;
 
 transform:scale(1.1);
 
-background:#ff3f79;
-
-}
-
-footer{
-
-background:#ff9fc3;
-
-padding:30px;
-
-text-align:center;
-
-color:white;
-
-margin-top:80px;
-
-}
-
-@media(max-width:768px){
-
-header{
-
-flex-direction:column;
-
-padding:15px;
-
-}
-
-nav ul{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:15px;
-
-}
-
-.hero{
-
-flex-direction:column;
-
-text-align:center;
-
-}
-
-.hero h1{
-
-font-size:42px;
-
-}
-
-.photo img{
-
-width:250px;
-
-height:250px;
-
-}
-
 }
 
 </style>
 
-</body>
-</html>
-```
+<script>
 
+/* Back To Top */
+
+const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+topBtn.style.display=window.scrollY>300?"block":"none";
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+</script>
